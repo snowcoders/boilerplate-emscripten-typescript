@@ -1,0 +1,14 @@
+One time install
+ - For all
+   - mingw32 - http://mingw.org/
+ - For js builds
+   - Visual Studio 2017 - If building for web, you will need to install Visual Studio 2017 or greater. This is because emsdk seems to require it for some reason.
+   - Emscripten - http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
+
+
+To build this directory run
+
+cd C:\Users\RickyPatel\Desktop\TestApp\client.shared
+C:\Users\RickyPatel\Downloads\emsdk-portable-64bit\emsdk_env.bat
+PATH = %PATH%;C:\MinGW\bin
+mingw32-make clean all

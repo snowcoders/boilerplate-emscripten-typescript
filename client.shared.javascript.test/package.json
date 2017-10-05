@@ -1,0 +1,44 @@
+{
+  "name": "client.shared.javascript.test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rmdir /S /Q app",
+    "build": "npm run build-tsc",
+    "build-tsc": "tsc",
+    "mocha": "mocha --require ts-node/register src/**/*.test.ts",
+    "karma": "karma start ./karma.conf.js",
+    "test": "npm run mocha && npm run karma"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "^2.3.5",
+    "client.shared.javascript": "../client.shared.javascript"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/expect": "^1.20.2",
+    "@types/mocha": "^2.2.43",
+    "@types/sinon": "^2.3.5",
+    "chai": "^4.1.0",
+    "karma": "^1.7.1",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.4",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sinon": "^1.0.5",
+    "karma-source-map-support": "^1.2.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-sourcemap-writer": "^0.1.2",
+    "karma-typescript": "^3.0.4",
+    "karma-typescript-preprocessor": "^0.3.1",
+    "mocha": "^3.5.3",
+    "phantomjs-prebuilt": "^2.1.14",
+    "sinon": "^2.4.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  }
+}

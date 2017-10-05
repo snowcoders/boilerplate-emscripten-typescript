@@ -1,0 +1,16 @@
+{
+  "name": "client.shared.javascript",
+  "version": "1.0.0",
+  "description": "Shared js library",
+  "main": "./ship/client.shared.js",
+  "types": "client.shared.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "requirejs": "^2.3.5"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./app/",
+    "sourceMap": true,
+    "target": "es5",
+    "module": "umd",
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": false,
+    "removeComments": true
+  },
+  "types": [
+    "node",
+    "mocha",
+    "chai",
+    "expect"
+  ],
+  "version": "2.4.1",
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
