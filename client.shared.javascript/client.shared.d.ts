@@ -1,3 +1,3 @@
-declare module 'client.shared.javascript' {
+declare module 'client.shared' {
     export function createInstance(emscriptenArgs: any): any;
 }

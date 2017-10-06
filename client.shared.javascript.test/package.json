@@ -9,13 +9,14 @@
     "build-tsc": "tsc",
     "mocha": "mocha --require ts-node/register src/**/*.test.ts",
     "karma": "karma start ./karma.conf.js",
-    "test": "npm run mocha && npm run karma"
+    "test": "npm run mocha && npm run karma",
+    "trace": "tsc --traceResolution"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "requirejs": "^2.3.5",
-    "client.shared.javascript": "../client.shared.javascript"
+    "client.shared": "../client.shared.javascript"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",

@@ -2,21 +2,27 @@
     if (typeof module === "object" && typeof module.exports === "object") {
       var v = factory(require, exports);
       if (v !== undefined) {
-        module.exports = function (moduleParams) {
+        module.exports = {
+          createInstance: function (moduleParams) {
             return v(moduleParams);
-        };
+        }};
       }
     }
     else if (typeof define === "function" && define.amd) {
       define(["require", "exports"], function (require, exports) {
         var v = factory(require, exports);
-        return function (moduleParams) {
-          return v(moduleParams);
-        };
+        return {
+          createInstance: function (moduleParams) {
+            return v(moduleParams);
+        }};
       });
     }
     else {
-      Module = factory(null, null);
+      var v = factory(null, null);
+      Module = {
+        createInstance: function (moduleParams) {
+          return v(moduleParams);
+      }};
     }
   })(function (require, exports) {
     var Module = function (Module) {

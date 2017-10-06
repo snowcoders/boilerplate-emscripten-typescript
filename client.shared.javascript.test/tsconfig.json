@@ -4,6 +4,7 @@
     "sourceMap": true,
     "target": "es5",
     "module": "umd",
+    "moduleResolution": "node",
     "noEmitOnError": false,
     "noImplicitAny": false,
     "experimentalDecorators": true,
@@ -22,6 +23,7 @@
     "src/**/*.ts"
   ],
   "exclude": [
+    "src/**/*.test.ts",    
     "node_modules"
   ]
 }

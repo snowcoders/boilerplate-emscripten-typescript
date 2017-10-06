@@ -4,8 +4,8 @@
     <script src="../node_modules/requirejs/require.js"></script>
     <script>
         var shared = null;
-        require(["./client.shared"], function (moduleConstructor) {
-            shared = moduleConstructor({
+        require(["./client.shared"], function (factory) {
+            shared = factory.createInstance({
                 onRuntimeInitialized: function () {
                     // Remember that the context here is the created module.
                     // Further, this callback is called in the middle of construction, therefore

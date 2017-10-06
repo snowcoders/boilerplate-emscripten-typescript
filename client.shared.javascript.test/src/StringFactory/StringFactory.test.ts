@@ -1,12 +1,20 @@
 ﻿import { expect } from "chai";
 
-import * as createInstance from "client.shared.javascript/debug/client.shared";
+// If moduleResolution is node
+import { createInstance } from "client.shared";
+// If moduleResolution is classic
+// import { createInstance } from "../../node_modules/client.shared/client.shared";
 
 describe("StringFactory", () => {
     it("Make sure StringFactory exists", () => {
         let instance = createInstance({
             onRuntimeInitialized: () => {
-            }
+            },
+            locateFile: function(filename) {
+                if (filename === 'client.shared.js.mem') {
+                    return "node_modules/client.shared/ship/client.shared.js.mem"
+                }                
+            },
         });
 
         expect(instance).to.exist;
@@ -15,7 +23,12 @@ describe("StringFactory", () => {
     it("GetString", () => {
         let instance = createInstance({
             onRuntimeInitialized: () => {
-            }
+            },
+            locateFile: function(filename) {
+                if (filename === 'client.shared.js.mem') {
+                    return "node_modules/client.shared/ship/client.shared.js.mem"
+                }                
+            },
         });
 
         let stringFactory = new instance.StringFactory();
@@ -27,7 +40,12 @@ describe("StringFactory", () => {
     it("GetString twice returns different strings", () => {
         let instance = createInstance({
             onRuntimeInitialized: () => {
-            }
+            },
+            locateFile: function(filename) {
+                if (filename === 'client.shared.js.mem') {
+                    return "node_modules/client.shared/ship/client.shared.js.mem"
+                }                
+            },
         });
 
         let stringFactory = new instance.StringFactory();
