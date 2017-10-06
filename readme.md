@@ -23,11 +23,9 @@ https://github.com/banditcpp/bandit
 You'll need to clone the library
 This is only required for client.shared.test
 
-## Windows only - Mingw32
-Mingw32 allows for make to be run on windows. Of the packages available, you'll need
-- mingw32-gcc-g++
-- mingw32-make
-- mingw32-pthreads-w32
+## Windows only - Mingw64
+Mingw64 allows for make to be run on windows.
+http://mingw-w64.org/
 
 # Setting up the CMD
 Note: I've been doing this on Windows but it should compile on unix or linux with a few minor fixes.
