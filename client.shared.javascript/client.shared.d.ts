@@ -1,3 +1,10 @@
 declare module 'client.shared' {
-    export function createInstance(emscriptenArgs: any): any;
+    interface StringFactory {
+        new(): StringFactory;
+        getString(): string;
+    }
+    interface ClientShared {
+        StringFactory: StringFactory;
+    }
+    export function createInstance(emscriptenArgs: any): ClientShared;
 }
