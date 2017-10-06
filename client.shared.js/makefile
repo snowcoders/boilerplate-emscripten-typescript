@@ -1,4 +1,5 @@
 # Useful methods or functions
+include ../makefile.sharedConstants
 include ../makefile.sharedFunctions
 # Dependent files
 PREFIX = $(call FixPath,./src/prefix.js)
@@ -12,9 +13,7 @@ TARGET_NAME_GCC_DEBUG = $(call FixPath,debug/$(TARGET_NAME_GCC))
 TARGET_NAME_GCC_SHIP = $(call FixPath,ship/$(TARGET_NAME_GCC))
 # g++ flags
 #GPP_FLAGS_ALL = -s MODULARIZE=1
-GPP_FLAGS_ALL = --pre-js $(PREFIX) --post-js $(POSTFIX)
-GPP_FLAGS_DEBUG = $(GPP_FLAGS_ALL) -O0 -s NO_EXIT_RUNTIME=1 -s EXCEPTION_DEBUG=1
-GPP_FLAGS_SHIP  = $(GPP_FLAGS_ALL) -Oz -s NO_EXIT_RUNTIME=1
+EMCC_JS_WRAPPER = --pre-js $(PREFIX) --post-js $(POSTFIX)
 
 all: debug ship
 debug: debug_emcc debug/requirejs.html debug/script.html
@@ -24,11 +23,11 @@ ship_emcc: $(TARGET_NAME_GCC_SHIP)
 
 $(TARGET_NAME_GCC_DEBUG): $(LIBRARIES_DEBUG) $(PREFIX) $(POSTFIX)
 	$(call MakeDir,$(dir $@))
-	emcc -std=c++11 --bind $(LIBRARIES_DEBUG) -o $(TARGET_NAME_GCC_DEBUG) $(GPP_FLAGS_DEBUG)
+	emcc --bind $(LIBRARIES_DEBUG) -o $(TARGET_NAME_GCC_DEBUG) $(EMCC_FLAGS_DEBUG) $(EMCC_JS_WRAPPER)
 
 $(TARGET_NAME_GCC_SHIP): $(LIBRARIES_SHIP) $(PREFIX) $(POSTFIX)
 	$(call MakeDir,$(dir $@))
-	emcc -std=c++11 --bind $(LIBRARIES_SHIP) -o $(TARGET_NAME_GCC_SHIP) $(GPP_FLAGS_SHIP)
+	emcc --bind $(LIBRARIES_SHIP) -o $(TARGET_NAME_GCC_SHIP) $(EMCC_FLAGS_SHIP) $(EMCC_JS_WRAPPER)
 
 debug/%.html: src/%.html
 	$(call MakeDir,$@)

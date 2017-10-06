@@ -1,4 +1,5 @@
 # Useful methods or functions
+include ../makefile.sharedConstants
 include ../makefile.sharedFunctions
 # Final outputs
 TARGET_NAME_GCC = client.shared.test.exe
@@ -20,9 +21,6 @@ TARGET_NAME_GCC_SHIP = ship/$(TARGET_NAME_GCC)
 HEADER_FILES_NO_SRC = $(patsubst src/%,%, $(HEADER_FILES))
 HEADER_FILES_DEBUG = $(patsubst %.h,debug/headers/%.h, $(HEADER_FILES_NO_SRC))
 HEADER_FILES_SHIP = $(patsubst %.h,ship/headers/%.h, $(HEADER_FILES_NO_SRC))
-# g++ flags
-GPP_FLAGS_DEBUG = -O0 -g3
-GPP_FLAGS_SHIP = -O3
 
 all: debug ship
 debug: debug_gcc debug_headers

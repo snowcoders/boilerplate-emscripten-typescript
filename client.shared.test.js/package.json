@@ -1,5 +1,5 @@
 {
-  "name": "client.shared.javascript.test",
+  "name": "client.shared.test.js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "requirejs": "^2.3.5",
-    "client.shared": "../client.shared.javascript"
+    "client.shared": "../client.shared.js"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
