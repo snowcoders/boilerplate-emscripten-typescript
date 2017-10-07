@@ -1,4 +1,5 @@
 # Useful methods or functions
+include ../makefile.sharedConstants
 include ../makefile.sharedFunctions
 # Inputs
 CPP_FILES = $(call rwildcard,src/,*.cpp) 
@@ -19,9 +20,6 @@ TARGET_NAME_EMCC_SHIP = ship/$(TARGET_NAME_EMCC)
 HEADER_FILES_NO_SRC = $(patsubst src/%,%, $(HEADER_FILES))
 HEADER_FILES_DEBUG = $(patsubst %.h,debug/headers/%.h, $(HEADER_FILES_NO_SRC))
 HEADER_FILES_SHIP = $(patsubst %.h,ship/headers/%.h, $(HEADER_FILES_NO_SRC))
-# g++ flags
-GPP_FLAGS_DEBUG = -O0 -g3
-GPP_FLAGS_SHIP = -O3
 
 all: debug ship
 debug: debug_gcc debug_emcc debug_headers
@@ -43,11 +41,11 @@ $(TARGET_NAME_GCC_SHIP): $(OBJ_FILES_SHIP_GCC)
 
 $(TARGET_NAME_EMCC_DEBUG): $(OBJ_FILES_DEBUG_EMCC)
 	$(call MakeDir,$(dir $@))
-	emcc -std=c++11 $(call FixPath,$^) -o $(call FixPath,$@) -o0 -g4 -s MODULARIZE=1 -s NO_EXIT_RUNTIME=1 -s EXCEPTION_DEBUG=1 -s SAFE_HEAP=1
+	emcc $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_DEBUG)
 
 $(TARGET_NAME_EMCC_SHIP): $(OBJ_FILES_SHIP_EMCC)
 	$(call MakeDir,$(dir $@))
-	emcc -std=c++11 $(call FixPath,$^) -o $(call FixPath,$@) -oz -s MODULARIZE=1 -s NO_EXIT_RUNTIME=1
+	emcc $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_SHIP)
 
 debug_obj/gcc/%.o: %.cpp
 	$(call MakeDir,$@)
@@ -59,11 +57,11 @@ ship_obj/gcc/%.o: %.cpp
 
 debug_obj/emcc/%.o: %.cpp
 	$(call MakeDir,$@)
-	emcc -std=c++11 -c $(call FixPath,$^) -o $(call FixPath,$@) $(GPP_FLAGS_DEBUG)
+	emcc -c $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_DEBUG)
 
 ship_obj/emcc/%.o: %.cpp
 	$(call MakeDir,$@)
-	emcc -std=c++11 -c $(call FixPath,$^) -o $(call FixPath,$@) $(GPP_FLAGS_SHIP)
+	emcc -c $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_SHIP)
 
 debug/headers/%: src/%
 	$(call MakeDir,$@)

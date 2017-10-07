@@ -7,12 +7,12 @@ client_shared:
 	cd ./client.shared $(CmdSeparator) $(Make)
 	
 client_shared_javascript:
-	cd ./client.shared.javascript $(CmdSeparator) $(Make)
+	cd ./client.shared.js $(CmdSeparator) $(Make)
 	
 client_shared_test:
-	cd ./client.shared.test $(CmdSeparator) $(Make)
+	cd ./client.shared.test.cpp $(CmdSeparator) $(Make)
 
 clean:
 	cd $(call FixPath,./client.shared) $(CmdSeparator) $(Make) clean
-	cd $(call FixPath,./client.shared.javascript) $(CmdSeparator) $(Make) clean
-	cd $(call FixPath,./client.shared.test) $(CmdSeparator) $(Make) clean
+	cd $(call FixPath,./client.shared.js) $(CmdSeparator) $(Make) clean
+	cd $(call FixPath,./client.shared.test.cpp) $(CmdSeparator) $(Make) clean
