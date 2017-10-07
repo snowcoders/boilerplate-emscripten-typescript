@@ -7,7 +7,10 @@ This is example boilerplate code of how to write code in C++ that is compiled us
  - client.shared.test.js - The javascript test code for the library
 
 # Getting this example
-TODO
+`git clone --recursive https://github.com/k2snowman69/boilerplate-emscripten-typescript/`
+or if you already cloned it just run
+`git submodule update --init --recursive`
+in the root directory
 
 # Dependencies
 There are several dependencies to compiling this project.
@@ -16,12 +19,6 @@ There are several dependencies to compiling this project.
 Emscripten is a C++ to JavaScript compiler which converts C++ code into JavaScript.
 http://kripken.github.io/emscripten-site/
 You'll need the SDK at minimum
-
-## Bandit
-Bandit is a C++ Unit Test library that is header only.
-https://github.com/banditcpp/bandit
-You'll need to clone the library
-This is only required for client.shared.test
 
 ## Windows only - Mingw64
 Mingw64 allows for make to be run on windows.
@@ -33,7 +30,7 @@ Note: I've been doing this on Windows but it should compile on unix or linux wit
 # Building client.shared, client.shared.js, client.shared.test.cpp
 1. Open a prompt window
 2. Setup the emscripten sdk by running `emsdk_env.bat` from wherever you installed
-3. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;C:\MinGW\bin`)
+3. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
 4. Run `make` (or if on windows `mingw32-make`)
 
 # Building client.shared.test.js

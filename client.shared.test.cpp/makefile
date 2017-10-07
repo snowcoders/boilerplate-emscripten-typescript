@@ -6,8 +6,8 @@ TARGET_NAME_GCC = client.shared.test.exe
 # Dependent libraries
 LIBRARIES_DEBUG = $(call FixPath,../client.shared/debug/libclient.shared.a)
 LIBRARIES_SHIP = $(call FixPath,../client.shared/ship/libclient.shared.a)
-LIBRARIES_FLAGS_DEBUG = -I$(call FixPath,../../bandit) -I$(call FixPath,../client.shared/debug/headers) -L$(call FixPath,../client.shared/debug) -lclient.shared
-LIBRARIES_FLAGS_SHIP = -I$(call FixPath,../../bandit) -I$(call FixPath,../client.shared/ship/headers) -L$(call FixPath,../client.shared/ship) -lclient.shared
+LIBRARIES_FLAGS_DEBUG = -I$(call FixPath,../bandit) -I$(call FixPath,../client.shared/debug/headers) -L$(call FixPath,../client.shared/debug) -lclient.shared
+LIBRARIES_FLAGS_SHIP = -I$(call FixPath,../bandit) -I$(call FixPath,../client.shared/ship/headers) -L$(call FixPath,../client.shared/ship) -lclient.shared
 # Inputs
 CPP_FILES = $(call rwildcard,src/,*.cpp) 
 HEADER_FILES = $(call rwildcard,src/,*.h) 
