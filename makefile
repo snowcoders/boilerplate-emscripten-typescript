@@ -1,15 +1,19 @@
 # Useful methods or functions
 include makefile.sharedFunctions
 
-all: client_shared client_shared_javascript client_shared_test
+.PHONY: all
+all: client_shared_javascript client_shared_test
 
+.PHONY: client_shared
 client_shared:
 	cd ./client.shared $(CmdSeparator) $(Make)
 	
-client_shared_javascript:
+.PHONY: client_shared_javascript
+client_shared_javascript: client_shared
 	cd ./client.shared.js $(CmdSeparator) $(Make)
 	
-client_shared_test:
+.PHONY: client_shared_test
+client_shared_test: client_shared
 	cd ./client.shared.test.cpp $(CmdSeparator) $(Make)
 
 clean:

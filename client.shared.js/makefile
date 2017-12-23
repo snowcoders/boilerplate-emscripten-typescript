@@ -16,8 +16,8 @@ TARGET_NAME_GCC_SHIP = $(call FixPath,ship/$(TARGET_NAME_GCC))
 EMCC_JS_WRAPPER = --pre-js $(PREFIX) --post-js $(POSTFIX)
 
 all: debug ship
-debug: debug_emcc debug/requirejs.html debug/script.html
-ship: ship_emcc ship/requirejs.html ship/script.html
+debug: debug_emcc
+ship: ship_emcc
 debug_emcc: $(TARGET_NAME_GCC_DEBUG)
 ship_emcc: $(TARGET_NAME_GCC_SHIP)
 
@@ -28,14 +28,6 @@ $(TARGET_NAME_GCC_DEBUG): $(LIBRARIES_DEBUG) $(PREFIX) $(POSTFIX)
 $(TARGET_NAME_GCC_SHIP): $(LIBRARIES_SHIP) $(PREFIX) $(POSTFIX)
 	$(call MakeDir,$(dir $@))
 	emcc --bind $(LIBRARIES_SHIP) -o $(TARGET_NAME_GCC_SHIP) $(EMCC_FLAGS_SHIP) $(EMCC_JS_WRAPPER)
-
-debug/%.html: src/%.html
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
-
-ship/%.html: src/%.html
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
 
 clean:
 	$(call RemoveDir,debug)

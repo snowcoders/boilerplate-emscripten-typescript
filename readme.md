@@ -27,19 +27,24 @@ http://mingw-w64.org/
 # Setting up the CMD
 Note: I've been doing this on Windows but it should compile on unix or linux with a few minor fixes.
 
-# Building client.shared, client.shared.js, client.shared.test.cpp
+# Building
+## client.shared, client.shared.js, client.shared.test.cpp
 1. Open a prompt window
-2. Setup the emscripten sdk by running `emsdk_env.bat` from wherever you installed
-3. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
-4. Run `make` (or if on windows `mingw32-make`)
+1. Setup the emscripten sdk by running `emsdk_env.bat` from wherever you installed
+1. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
+1. Run `make` (or if on windows `mingw32-make`)
 
-# Building client.shared.test.js
-There is no build system for this because it only consists of tests! Just be sure to build everything else first.
+## client.shared.test.js
+1. Run npm install
 
-# Running client.shared.test.cpp
+## client.web
+1. Run npm install
+
+# Running
+## client.shared.test.cpp
 After building there should be two files
 - client.shared.test/debug/client.shared.test.exe
 - client.shared.test/ship/client.shared.test.exe
 
-# Running client.shared.test.js
+## client.shared.test.js
 This contains tests examples for karma and mocha. To run Karma run `npm run karma`. To run Mocha run `npm run mocha`. To run both, just do `npm test`.

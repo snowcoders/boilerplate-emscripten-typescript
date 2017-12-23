@@ -2,15 +2,9 @@
   "name": "client.shared",
   "version": "1.0.0",
   "description": "Shared js library",
-  "main": "client.shared.js",
+  "main": "./ship/client.shared.js",
   "types": "client.shared.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "requirejs": "^2.3.5"
-  }
+  "private": true
 }
