@@ -5,6 +5,8 @@ This is example boilerplate code of how to write code in C++ that is compiled us
  - client.shared.js - The transpiled javascript code associated with the C++ library
  - client.shared.test.cpp - The C++ test code for the library
  - client.shared.test.js - The javascript test code for the library
+ - client.web - A sample web application that uses basic web technologies to load the transpiled library
+ - client.web.webpack - A webpack sample application that uses webpack + component libraries (more accurate to what most people will be doing)
 
 # Getting this example
 `git clone --recursive https://github.com/k2snowman69/boilerplate-emscripten-typescript/`
@@ -25,7 +27,7 @@ Mingw64 allows for make to be run on windows.
 http://mingw-w64.org/
 
 # Setting up the CMD
-Note: I've been doing this on Windows but it should compile on unix or linux with a few minor fixes.
+Note: I've been doing this on Windows but it should compile on unix or linux with a few minor fixes. Most likely, it's the npm scripts that would give you the biggest hurdles.
 
 # Building
 ## client.shared, client.shared.js, client.shared.test.cpp
@@ -34,17 +36,23 @@ Note: I've been doing this on Windows but it should compile on unix or linux wit
 1. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
 1. Run `make` (or if on windows `mingw32-make`)
 
-## client.shared.test.js
-1. Run npm install
+You can also run make from the root directory, and it will recurse into all the sub directories.
 
-## client.web
+## client.shared.test.js, client.web, client.web.webpack
+1. Build client.shared.js
 1. Run npm install
 
 # Running
 ## client.shared.test.cpp
 After building there should be two files
-- client.shared.test/debug/client.shared.test.exe
-- client.shared.test/ship/client.shared.test.exe
+- client.shared.test.cpp/debug/client.shared.test.exe
+- client.shared.test.cpp/ship/client.shared.test.exe
 
 ## client.shared.test.js
-This contains tests examples for karma and mocha. To run Karma run `npm run karma`. To run Mocha run `npm run mocha`. To run both, just do `npm test`.
+This contains tests examples for karma and mocha. To run Karma run `npm run karma`. To run Mocha run `npm run mocha`. To run both, just run `npm run test`.
+
+## client.web
+Run `npm run serve` from this directory and it will show you an introduction page
+
+## client.web.webpack
+Run `npm run serve` from this directory and it will show you an introduction page
