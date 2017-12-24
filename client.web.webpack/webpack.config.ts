@@ -16,7 +16,7 @@ const config: webpack.Configuration = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json", ".html", ".js.mem"],
+        extensions: [".ts", ".tsx", ".js", ".json", ".html", ".js.mem"]
     },
 
     module: {
@@ -54,8 +54,6 @@ const config: webpack.Configuration = {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
-        // Knockout Only
-        "knockout": "knockout",
         // React Only
         "react": "React",
         "react-dom": "ReactDOM"
