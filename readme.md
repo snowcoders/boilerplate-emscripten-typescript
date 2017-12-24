@@ -9,7 +9,7 @@ This is example boilerplate code of how to write code in C++ that is compiled us
  - client.web.webpack - A webpack sample application that uses webpack + component libraries (more accurate to what most people will be doing)
 
 # Getting this example
-`git clone --recursive https://github.com/k2snowman69/boilerplate-emscripten-typescript/`
+`git clone --recursive https://github.com/snowcoders/boilerplate-emscripten-typescript/`
 or if you already cloned it just run
 `git submodule update --init --recursive`
 in the root directory
