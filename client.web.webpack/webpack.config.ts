@@ -1,7 +1,8 @@
-var webpack = require('webpack');
+import * as webpack from "webpack";
 
-module.exports = {
+const config: webpack.Configuration = {
     entry: {
+        knockout: "./knockout/index.ts",
         react: "./react/index.tsx"
     },
     output: {
@@ -15,7 +16,7 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"],
+        extensions: [".ts", ".tsx", ".js", ".json", ".html", ".js.mem"],
     },
 
     module: {
@@ -36,6 +37,14 @@ module.exports = {
                 }, {
                     loader: "sass-loader" // compiles Sass to CSS
                 }]
+            },
+
+            // Knockout Only
+            // HTML files for knockout templates
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                loader: "html-loader?exportAsEs6Default"
             }
         ]
     },
@@ -45,6 +54,9 @@ module.exports = {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
+        // Knockout Only
+        "knockout": "knockout",
+        // React Only
         "react": "React",
         "react-dom": "ReactDOM"
     },
@@ -53,3 +65,5 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ]
 };
+
+export default config;

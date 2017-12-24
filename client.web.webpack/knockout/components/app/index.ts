@@ -1,0 +1,1 @@
+export { AppViewModel } from './app.require';
