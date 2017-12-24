@@ -2,7 +2,7 @@
 
 <head>
     <title>Script tag example</title>
-    <script type="" src="./node_modules/client.shared/ship/client.shared.js"></script>
+    <script type="" src="./node_modules/client-shared/ship/client-shared.js"></script>
     <script type="text/javascript">
         document.onreadystatechange = function () {
             if (document.readyState === "complete") {
@@ -22,8 +22,8 @@
                     }, 1000);
                 },
                 locateFile: function (filename) {
-                    if (filename === 'client.shared.js.mem') {
-                        return "./node_modules/client.shared/ship/client.shared.js.mem"
+                    if (filename === 'client-shared.js.mem') {
+                        return "./node_modules/client-shared/ship/client-shared.js.mem"
                     }
                 }
             });

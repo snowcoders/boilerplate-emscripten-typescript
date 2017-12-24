@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // Store
-import { ClientShared, createInstance } from "client.shared";
+import { ClientShared, createInstance } from "client-shared";
 
 // Styles
 import "./App.scss";
@@ -23,7 +23,7 @@ export class App extends React.Component<AppProps, AppState> {
 
     componentDidMount() {
         const app = this;
-        import("client.shared").then(foo => {
+        import("client-shared").then(foo => {
             if (foo.createInstance != null) {
                 this.setState({
                     currentString: "Running create instance..."
@@ -37,8 +37,8 @@ export class App extends React.Component<AppProps, AppState> {
                     app._setInstance(this);
                 },
                 locateFile: function (filename: string) {
-                    if (filename === 'client.shared.js.mem') {
-                        return "/node_modules/client.shared/ship/client.shared.js.mem"
+                    if (filename === 'client-shared.js.mem') {
+                        return "/node_modules/client-shared/ship/client-shared.js.mem"
                     }
                 }
             });

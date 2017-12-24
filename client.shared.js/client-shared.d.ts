@@ -1,4 +1,4 @@
-declare module 'client.shared' {
+declare module 'client-shared' {
     interface StringFactory {
         new(): StringFactory;
         getString(): string;

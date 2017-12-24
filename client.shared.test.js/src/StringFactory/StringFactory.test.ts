@@ -1,8 +1,8 @@
 ﻿import { expect } from "chai";
 
 // If moduleResolution is node
-import { ClientShared } from "client.shared";
-import { createInstance } from "client.shared/debug/client.shared"; // Seems if you get createInstance from client.shared, there are issues loading the mem file
+import { ClientShared } from "client-shared";
+import { createInstance } from "client-shared/debug/client-shared"; // Seems if you get createInstance from client.shared, there are issues loading the mem file
 // If moduleResolution is classic
 // import { createInstance } from "../../node_modules/client.shared/client.shared";
 
