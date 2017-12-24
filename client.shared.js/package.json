@@ -1,9 +1,9 @@
 {
-  "name": "client.shared",
+  "name": "client-shared",
   "version": "1.0.0",
   "description": "Shared js library",
-  "main": "./ship/client.shared.js",
-  "types": "client.shared.d.ts",
+  "main": "./ship/client-shared.js",
+  "types": "client-shared.d.ts",
   "author": "",
   "license": "MIT",
   "private": true

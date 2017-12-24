@@ -1,21 +1,17 @@
 {
-  "name": "client.shared.test.js",
+  "name": "client-shared-test-js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rmdir /S /Q app",
-    "build": "npm run build-tsc",
-    "build-tsc": "tsc",
     "mocha": "mocha --require ts-node/register src/**/*.test.ts",
     "karma": "karma start ./karma.conf.js",
-    "test": "npm run mocha && npm run karma",
-    "trace": "tsc --traceResolution"
+    "test": "npm run mocha && npm run karma"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "client.shared": "file:../client.shared.js",
+    "client-shared": "file:../client.shared.js",
     "requirejs": "^2.3.5"
   },
   "devDependencies": {

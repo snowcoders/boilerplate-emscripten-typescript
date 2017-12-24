@@ -1,5 +1,5 @@
 {
-  "name": "webpack-testing",
+  "name": "client-web-webpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
     "awesome-typescript-loader": "^3.4.1",
-    "client.shared": "file:../client.shared.js",
+    "client-shared": "file:../client.shared.js",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "source-map-loader": "^0.2.3",
@@ -24,8 +24,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "hot": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
-    "serve": "live-server --port=53002 --host=localhost --watch=app,node_modules,index.html",
+    "serve": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "server": "live-server --port=53002 --host=localhost --watch=dist,node_modules,index.html",
     "watch": "webpack --watch"
   },
   "author": "",

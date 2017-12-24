@@ -4,13 +4,13 @@
   "description": "Client web application",
   "main": "index.js",
   "scripts": {
-    "serve": "live-server --port=53002 --host=localhost --watch=app,node_modules,index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "npm run server",
+    "server": "live-server --port=53002 --host=localhost --watch=node_modules,index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "client.shared": "file:../client.shared.js",
+    "client-shared": "file:../client.shared.js",
     "requirejs": "^2.3.5"
   },
   "devDependencies": {

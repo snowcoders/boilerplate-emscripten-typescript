@@ -5,7 +5,7 @@
     <script src="./node_modules/requirejs/require.js"></script>
     <script>
         var shared = null;
-        require(["./node_modules/client.shared/ship/client.shared"], function (factory) {
+        require(["./node_modules/client-shared/ship/client-shared"], function (factory) {
             shared = factory.createInstance({
                 onRuntimeInitialized: function () {
                     // Remember that the context here is the created module.
@@ -18,8 +18,8 @@
                     }, 1000);
                 },
                 locateFile: function (filename) {
-                    if (filename === 'client.shared.js.mem') {
-                        return "./node_modules/client.shared/ship/client.shared.js.mem"
+                    if (filename === 'client-shared.js.mem') {
+                        return "./node_modules/client-shared/ship/client-shared.js.mem"
                     }
                 }
             });

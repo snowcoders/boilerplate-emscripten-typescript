@@ -8,7 +8,7 @@ POSTFIX = $(call FixPath,./src/postfix.js)
 LIBRARIES_DEBUG = $(call FixPath,../client.shared/debug/client.shared.bc)
 LIBRARIES_SHIP = $(call FixPath,../client.shared/ship/client.shared.bc)
 # Outputs
-TARGET_NAME_GCC = client.shared.js
+TARGET_NAME_GCC = client-shared.js
 TARGET_NAME_GCC_DEBUG = $(call FixPath,debug/$(TARGET_NAME_GCC))
 TARGET_NAME_GCC_SHIP = $(call FixPath,ship/$(TARGET_NAME_GCC))
 # g++ flags
