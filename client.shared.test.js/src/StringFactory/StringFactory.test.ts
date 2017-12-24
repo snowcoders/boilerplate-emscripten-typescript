@@ -1,13 +1,14 @@
 ﻿import { expect } from "chai";
 
 // If moduleResolution is node
-import { createInstance } from "client.shared";
+import { createInstance } from "client.shared/debug/client.shared";
 // If moduleResolution is classic
 // import { createInstance } from "../../node_modules/client.shared/client.shared";
 
 describe("StringFactory", () => {
     it("Make sure StringFactory exists", () => {
         let instance = createInstance({
+            ENVIRONMENT: 'WEB',
             onRuntimeInitialized: () => {
             },
             locateFile: function(filename) {
@@ -22,6 +23,7 @@ describe("StringFactory", () => {
     });
     it("GetString", () => {
         let instance = createInstance({
+            ENVIRONMENT: 'WEB',
             onRuntimeInitialized: () => {
             },
             locateFile: function(filename) {
@@ -39,6 +41,7 @@ describe("StringFactory", () => {
     });
     it("GetString twice returns different strings", () => {
         let instance = createInstance({
+            ENVIRONMENT: 'WEB',
             onRuntimeInitialized: () => {
             },
             locateFile: function(filename) {
