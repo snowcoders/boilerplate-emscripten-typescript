@@ -55,4 +55,4 @@ This contains tests examples for karma and mocha. To run Karma run `npm run karm
 Run `npm run serve` from this directory and it will show you an introduction page
 
 ## client.web.webpack
-Run `npm run serve` from this directory and it will show you an introduction page
+Run `npm run hot` from this directory and it will show you an introduction page

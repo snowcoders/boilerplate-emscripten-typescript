@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // Store
-import { createInstance } from "client.shared/debug/client.shared";
+import { createInstance } from "client.shared";
 
 // Styles
 import "./App.scss";
@@ -23,7 +23,7 @@ export class App extends React.Component<AppProps, AppState> {
 
     componentDidMount() {
         const app = this;
-        import("client.shared/debug/client.shared").then(foo => {
+        import("client.shared").then(foo => {
             if (foo.createInstance != null) {
                 this.setState({
                     currentString: "Running create instance..."

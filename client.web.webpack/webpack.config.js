@@ -36,11 +36,6 @@ module.exports = {
                 }, {
                     loader: "sass-loader" // compiles Sass to CSS
                 }]
-            },
-
-            {
-                test: /\.js.mem$/,
-                loader: "raw-loader"
             }
         ]
     },
