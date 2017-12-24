@@ -1,14 +1,16 @@
 ﻿import { expect } from "chai";
 
 // If moduleResolution is node
-import { createInstance } from "client.shared/debug/client.shared";
+import { ClientShared } from "client.shared";
+import { createInstance } from "client.shared/debug/client.shared"; // Seems if you get createInstance from client.shared, there are issues loading the mem file
 // If moduleResolution is classic
 // import { createInstance } from "../../node_modules/client.shared/client.shared";
 
 describe("StringFactory", () => {
-    it("Make sure StringFactory exists", () => {
-        let instance = createInstance({
-            ENVIRONMENT: 'WEB',
+    let instance: ClientShared;
+    beforeEach(() => {
+        instance = createInstance({
+            ENVIRONMENT:"WEB",
             onRuntimeInitialized: () => {
             },
             locateFile: function(filename) {
@@ -17,40 +19,22 @@ describe("StringFactory", () => {
                 }                
             },
         });
+    });
 
+    it("Make sure StringFactory exists", () => {
         expect(instance).to.exist;
         expect(instance.StringFactory).to.exist;
     });
-    it("GetString", () => {
-        let instance = createInstance({
-            ENVIRONMENT: 'WEB',
-            onRuntimeInitialized: () => {
-            },
-            locateFile: function(filename) {
-                if (filename === 'client.shared.js.mem') {
-                    return "node_modules/client.shared/ship/client.shared.js.mem"
-                }                
-            },
-        });
 
+    it("GetString", () => {
         let stringFactory = new instance.StringFactory();
         expect(stringFactory.getString).to.exist;
         let string_0 = stringFactory.getString();
         expect(string_0).to.not.be.empty;
         expect(string_0).to.contain(0);
     });
-    it("GetString twice returns different strings", () => {
-        let instance = createInstance({
-            ENVIRONMENT: 'WEB',
-            onRuntimeInitialized: () => {
-            },
-            locateFile: function(filename) {
-                if (filename === 'client.shared.js.mem') {
-                    return "node_modules/client.shared/ship/client.shared.js.mem"
-                }                
-            },
-        });
 
+    it("GetString twice returns different strings", () => {
         let stringFactory = new instance.StringFactory();
         expect(stringFactory.getString).to.exist;
         let string_0 = stringFactory.getString();
