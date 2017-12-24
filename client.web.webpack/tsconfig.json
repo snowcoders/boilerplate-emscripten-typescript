@@ -3,12 +3,14 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
-        "module": "esnext",
+        "module": "commonjs",
         "target": "esnext",
         "moduleResolution": "node",
         "jsx": "react"
     },
     "include": [
-        "./react/**/*"
+        "./knockout/**/*",
+        "./react/**/*",
+        "*.ts"
     ]
 }
