@@ -8,5 +8,5 @@ declare module "client-shared-js" {
         StringFactory: StringFactory;
     }
 
-    export default function Module(emscriptenArgs: any): ClientShared;;
+    export default function Module(emscriptenArgs: any): ClientShared;
 }
