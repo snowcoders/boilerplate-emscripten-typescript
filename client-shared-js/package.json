@@ -8,9 +8,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "transpile": "replace-in-file \"export default\" \"exports.default = \""
+    "build-debug": "babel ./debug/client-shared-js.es6.js --out-file ./debug/client-shared-js.js",
+    "build-ship": "babel ./ship/client-shared-js.es6.js --out-file ./ship/client-shared-js.js --presets=minify"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "replace-in-file": "^3.4.2"
   }
 }

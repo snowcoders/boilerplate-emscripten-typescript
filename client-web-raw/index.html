@@ -1,16 +1,34 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Standard web example</title>
-    </head>
-    <body>
-        <div>
-            <p>Thanks for trying the standard web technology example! Here are a list of different component engines running emscripten + webpack</p>
-            <ul>
-                <li><a href="./requirejs.html">Require.js</a> - Loads the shared library via require.js</li>
-                <li><a href="./script.html">Script</a> - Loads the shared library via a script tag</li>
-            </ul>
-        </div>
-    </body>
+
+<head>
+    <title>Script tag example</title>
+    <script type="text/javascript" src="./node_modules/client-shared-js/ship/client-shared-js.js"></script>
+    <script type="text/javascript">
+        document.onreadystatechange = function () {
+            if (document.readyState === "complete") {
+                initApplication();
+            }
+        }
+        function initApplication() {
+            ClientShared.default({
+                // Remember that the context here is the created module.
+                // Further, this callback is called in the middle of construction, therefore
+                // the variable shared is not ready.
+                onRuntimeInitialized: function () {
+                    var stringFactory = new this.StringFactory();
+                    var output = document.getElementById("hi");
+                    window.setInterval(function () {
+                        output.innerHTML = stringFactory.getString();
+                    }, 1000);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div>This is an example of how to include an emscripten javascript library directly using a script tag</div>
+    <div id="hi">Loading...</div>
+</body>
+
 </html>
