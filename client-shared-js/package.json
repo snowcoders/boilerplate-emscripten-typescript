@@ -1,0 +1,16 @@
+{
+  "name": "client-shared-js",
+  "version": "1.0.0",
+  "description": "Shared js library",
+  "main": "./ship/client-shared-js.js",
+  "types": "./client-shared-js.d.ts",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "transpile": "replace-in-file \"export default\" \"exports.default = \""
+  },
+  "devDependencies": {
+    "replace-in-file": "^3.4.2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "client-shared-test-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config=jest.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "client-shared-js": "file:../client-shared-js",
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "ts-jest": "~23.10.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  }
+}

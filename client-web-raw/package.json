@@ -1,0 +1,19 @@
+{
+  "name": "client-web",
+  "version": "1.0.0",
+  "description": "Client web application",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm run server",
+    "server": "live-server --port=53002 --host=localhost --watch=node_modules,index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "client-shared-js": "file:../client-shared-js",
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
