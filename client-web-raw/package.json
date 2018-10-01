@@ -4,7 +4,7 @@
   "description": "Client web application",
   "main": "index.js",
   "scripts": {
-    "serve": "npm run server",
+    "start": "npm run server",
     "server": "live-server --port=53002 --host=localhost --watch=node_modules,index.html"
   },
   "author": "",

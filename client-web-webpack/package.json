@@ -30,7 +30,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "serve": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "prepare": "npm run build",
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
     "server": "live-server --port=53002 --host=localhost --watch=dist,node_modules,index.html",
     "watch": "webpack --watch"
   },
