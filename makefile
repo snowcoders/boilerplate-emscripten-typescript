@@ -2,21 +2,21 @@
 include makefile.sharedFunctions
 
 .PHONY: all
-all: client_shared_javascript client_shared_test
+all: client_shared_js client_shared_cpp_test
 
-.PHONY: client_shared
-client_shared:
-	cd ./client.shared $(CmdSeparator) $(Make)
+.PHONY: client_shared_cpp
+client_shared_cpp:
+	cd ./client-shared-cpp $(CmdSeparator) $(Make)
 	
-.PHONY: client_shared_javascript
-client_shared_javascript: client_shared
-	cd ./client.shared.js $(CmdSeparator) $(Make)
+.PHONY: client_shared_js
+client_shared_js: client_shared_cpp
+	cd ./client-shared-js $(CmdSeparator) $(Make)
 	
-.PHONY: client_shared_test
-client_shared_test: client_shared
-	cd ./client.shared.test.cpp $(CmdSeparator) $(Make)
+.PHONY: client_shared_cpp_test
+client_shared_cpp_test: client_shared_cpp
+	cd ./client-shared-cpp-test $(CmdSeparator) $(Make)
 
 clean:
-	cd $(call FixPath,./client.shared) $(CmdSeparator) $(Make) clean
-	cd $(call FixPath,./client.shared.js) $(CmdSeparator) $(Make) clean
-	cd $(call FixPath,./client.shared.test.cpp) $(CmdSeparator) $(Make) clean
+	cd $(call FixPath,./client-shared-js) $(CmdSeparator) $(Make) clean
+	cd $(call FixPath,./client-shared-cpp-test) $(CmdSeparator) $(Make) clean
+	cd $(call FixPath,./client-shared-cpp) $(CmdSeparator) $(Make) clean

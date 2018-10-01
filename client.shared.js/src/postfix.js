@@ -1,4 +1,0 @@
-  return Module;
-};
-  return Module;
-});

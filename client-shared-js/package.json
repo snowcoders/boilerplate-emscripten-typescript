@@ -1,0 +1,20 @@
+{
+  "name": "client-shared-js",
+  "version": "1.0.0",
+  "description": "Shared js library",
+  "main": "./ship/client-shared-js.js",
+  "types": "./client-shared-js.d.ts",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build-debug": "babel ./debug/client-shared-js.es6.js --out-file ./debug/client-shared-js.js",
+    "build-ship": "babel ./ship/client-shared-js.es6.js --out-file ./ship/client-shared-js.js --presets=minify"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "replace-in-file": "^3.4.2"
+  }
+}
