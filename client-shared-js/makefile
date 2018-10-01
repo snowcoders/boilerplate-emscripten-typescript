@@ -21,11 +21,14 @@ all: debug ship
 debug: $(TARGET_NAME_GCC_DEBUG)
 ship: $(TARGET_NAME_GCC_SHIP)
 
-$(TARGET_NAME_GCC_DEBUG): $(TARGET_NAME_ES6_DEBUG)
+node_modules:
+	npm install
+
+$(TARGET_NAME_GCC_DEBUG): $(TARGET_NAME_ES6_DEBUG) node_modules
 # Required because EXPORT_ES6 outputs ES6 specific code and most libraries export ES5
 	npm run build-debug
 
-$(TARGET_NAME_GCC_SHIP): $(TARGET_NAME_ES6_SHIP)
+$(TARGET_NAME_GCC_SHIP): $(TARGET_NAME_ES6_SHIP) node_modules
 # Required because EXPORT_ES6 outputs ES6 specific code and most libraries export ES5
 	npm run build-ship
 
