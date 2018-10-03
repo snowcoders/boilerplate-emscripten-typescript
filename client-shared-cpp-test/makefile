@@ -54,6 +54,7 @@ ship/headers/%: src/%
 	$(call MakeDir,$(dir $@))
 	$(call CopyFile,$(call FixPath,$^),$(call FixPath,$(dir $@).))
 
+.PHONY: clean
 clean:
 	$(call RemoveDir,debug)
 	$(call RemoveDir,debug_obj)

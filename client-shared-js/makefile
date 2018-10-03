@@ -39,6 +39,7 @@ $(TARGET_NAME_ES6_SHIP): $(LIBRARIES_SHIP)
 # Required because EXPORT_ES6 outputs ES6 specific code and most libraries export ES5
 	npm run build-ship
 
+.PHONY: clean
 clean:
 	$(call RemoveDir,debug)
 	$(call RemoveDir,ship)
