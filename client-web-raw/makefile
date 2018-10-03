@@ -4,7 +4,7 @@ include ../makefile.sharedFunctions
 
 all: node_modules
 
-node_modules:
+node_modules: package.json
 	npm install
 
 .PHONY: clean

@@ -9,7 +9,6 @@ client_shared_cpp:
 	cd ./client-shared-cpp $(CmdSeparator) $(Make)
 	
 .PHONY: client_shared_js
-.NOTPARALLEL: client_shared_js
 client_shared_js: client_shared_cpp
 	cd ./client-shared-js $(CmdSeparator) $(Make)
 	
@@ -48,12 +47,4 @@ clean:
 	cd $(call FixPath,./client-shared-js) $(CmdSeparator) $(Make) clean
 	cd $(call FixPath,./client-shared-cpp-test) $(CmdSeparator) $(Make) clean
 	cd $(call FixPath,./client-shared-cpp) $(CmdSeparator) $(Make) clean
-
-.PHONY: clean-node-modules
-clean-node-modules: 
-	cd $(call FixPath,./client-web-raw) $(CmdSeparator) $(call RemoveDir,node_modules)
-	cd $(call FixPath,./client-web-webpack) $(CmdSeparator) $(call RemoveDir,node_modules)
-	cd $(call FixPath,./client-shared-js-test-jest) $(CmdSeparator) $(call RemoveDir,node_modules)
-	cd $(call FixPath,./client-shared-js-test-mocha) $(CmdSeparator) $(call RemoveDir,node_modules)
-	cd $(call FixPath,./client-shared-js) $(CmdSeparator) $(call RemoveDir,node_modules)
 	

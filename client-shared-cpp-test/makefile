@@ -60,3 +60,7 @@ clean:
 	$(call RemoveDir,debug_obj)
 	$(call RemoveDir,ship)
 	$(call RemoveDir,ship_obj)
+
+.PHONY: test
+test: $(TARGET_NAME_GCC_SHIP)
+	./$(TARGET_NAME_GCC_SHIP)

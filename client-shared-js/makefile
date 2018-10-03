@@ -1,6 +1,8 @@
 # Useful methods or functions
 include ../makefile.sharedConstants
 include ../makefile.sharedFunctions
+# Dependent npm libraries
+BABEL = $(call FixPath,./node_modules/@babel/cli/index.js)
 # Dependent libraries
 LIBRARIES_DEBUG = $(call FixPath,../client-shared-cpp/debug/client-shared.bc)
 LIBRARIES_SHIP = $(call FixPath,../client-shared-cpp/ship/client-shared.bc)
@@ -18,15 +20,16 @@ all: debug ship
 debug: $(TARGET_NAME_GCC_DEBUG)
 ship: $(TARGET_NAME_GCC_SHIP)
 
-node_modules:
+.ONESHELL: $(BABEL)
+$(BABEL):
 	npm install
 
-$(TARGET_NAME_GCC_DEBUG): $(TARGET_NAME_ES6_DEBUG) node_modules
 # Required because EXPORT_ES6 outputs ES6 specific code and most libraries export ES5
+$(TARGET_NAME_GCC_DEBUG): $(BABEL) $(TARGET_NAME_ES6_DEBUG)
 	npm run build-debug
 
-$(TARGET_NAME_GCC_SHIP): $(TARGET_NAME_ES6_SHIP) node_modules
 # Required because EXPORT_ES6 outputs ES6 specific code and most libraries export ES5
+$(TARGET_NAME_GCC_SHIP): $(BABEL) $(TARGET_NAME_ES6_SHIP)
 	npm run build-ship
 
 $(TARGET_NAME_ES6_DEBUG): $(LIBRARIES_DEBUG)
