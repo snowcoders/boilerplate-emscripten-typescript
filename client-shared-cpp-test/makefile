@@ -39,20 +39,20 @@ $(TARGET_NAME_GCC_SHIP): $(OBJ_FILES_SHIP) $(LIBRARIES_SHIP)
 	g++ $(call FixPath,$(OBJ_FILES_SHIP)) -o $(call FixPath,$@) $(LIBRARIES_FLAGS_SHIP) $(GPP_FLAGS_SHIP)
 
 debug_obj/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	g++ -c $(call FixPath,$^) -o $(call FixPath,$@) $(LIBRARIES_FLAGS_DEBUG) $(GPP_FLAGS_DEBUG)
 
 ship_obj/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	g++ -c $(call FixPath,$^) -o $(call FixPath,$@) $(LIBRARIES_FLAGS_SHIP) $(GPP_FLAGS_SHIP)
 
 debug/headers/%: src/%
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
+	$(call MakeDir,$(dir $@))
+	$(call CopyFile,$(call FixPath,$^),$(call FixPath,$(dir $@).))
 
 ship/headers/%: src/%
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
+	$(call MakeDir,$(dir $@))
+	$(call CopyFile,$(call FixPath,$^),$(call FixPath,$(dir $@).))
 
 clean:
 	$(call RemoveDir,debug)

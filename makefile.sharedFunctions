@@ -6,14 +6,12 @@ ifeq ($(OS),Windows_NT)
 	RemoveDir = if exist $1 rmdir /S /Q $1
 	Make = mingw32-make
 	CmdSeparator = &&
+	CopyFile = xcopy $1 $2 /Q /Y /I
 else
-	ifeq ($(shell uname), Linux)
-		FixPath = $1
-		MakeDir = mkdir -p $1
-		RemoveDir = if exist $1 rmdir /S /Q $1
-		Make = make
-		CmdSeparator = ;
-	else
-		$(error Unknown operating system)
-	endif
+	FixPath = $1
+	MakeDir = mkdir -p $1
+	RemoveDir = if exist $1 rmdir /S /Q $1
+	Make = make
+	CmdSeparator = ;
+	CopyFile = cp -f $1 $2
 endif
