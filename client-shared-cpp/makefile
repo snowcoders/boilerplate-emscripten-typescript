@@ -48,28 +48,28 @@ $(TARGET_NAME_EMCC_SHIP): $(OBJ_FILES_SHIP_EMCC)
 	emcc $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_SHIP)
 
 debug_obj/gcc/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	g++ -c $(call FixPath,$^) -o $(call FixPath,$@) $(GPP_FLAGS_DEBUG)
 
 ship_obj/gcc/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	g++ -c $(call FixPath,$^) -o $(call FixPath,$@) $(GPP_FLAGS_SHIP)
 
 debug_obj/emcc/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	emcc -c $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_DEBUG)
 
 ship_obj/emcc/%.o: %.cpp
-	$(call MakeDir,$@)
+	$(call MakeDir,$(dir $@))
 	emcc -c $(call FixPath,$^) -o $(call FixPath,$@) $(EMCC_FLAGS_SHIP)
 
 debug/headers/%: src/%
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
+	$(call MakeDir,$(dir $@))
+	$(call CopyFile,$(call FixPath,$^),$(call FixPath,$(dir $@).))
 
 ship/headers/%: src/%
-	$(call MakeDir,$@)
-	xcopy $(call FixPath,$^) $(call FixPath,$(dir $@).) /Q /Y /I
+	$(call MakeDir,$(dir $@))
+	$(call CopyFile,$(call FixPath,$^),$(call FixPath,$(dir $@).))
 
 clean:
 	$(call RemoveDir,debug)

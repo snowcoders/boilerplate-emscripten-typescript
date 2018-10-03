@@ -1,9 +1,6 @@
 # Useful methods or functions
 include ../makefile.sharedConstants
 include ../makefile.sharedFunctions
-# Dependent files
-PREFIX = $(call FixPath,./src/prefix.txt)
-POSTFIX = $(call FixPath,./src/postfix.txt)
 # Dependent libraries
 LIBRARIES_DEBUG = $(call FixPath,../client-shared-cpp/debug/client-shared.bc)
 LIBRARIES_SHIP = $(call FixPath,../client-shared-cpp/ship/client-shared.bc)

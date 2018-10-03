@@ -36,13 +36,20 @@ Note: I've been doing this on Windows but it should compile on unix or linux wit
 
 # Building
 ## client-shared-cpp, client-shared-js, client-shared-cpp-test
+On Windows
 1. Open a prompt window
 1. Setup the emscripten sdk by running `emsdk_env.bat` from wherever you installed
-1. If on windows, set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
-1. Run `make` (or if on windows `mingw32-make`)
-    - Hint: Use the -jN feature to run multiple processors
+1. Set the path to include your MinGW location (e.g. `PATH = %PATH%;D:/MinGW/mingw64/bin`)
+1. Run `mingw32-make`
 
-You can also run make from the root directory, and it will recurse into all the sub directories.
+On Unix (or Unix based system)
+1. Open a terminal window
+1. Setup the emscripten sdk by running `source ./emsdk_env.sh` from wherever you installed
+1. Run `make`
+
+Other notes:
+ - You can also run make from the root directory, and it will recurse into all the sub directories.
+ - Use the -jN feature to run multiple processors for faster builds
 
 ## client-shared-js-test, client-web-raw, client-web-webpack
 1. Build client-shared-js
@@ -65,10 +72,26 @@ You can change the reporter status to get more details from the tests. `--report
 1. Run `npm run start`.
 
 # Last checked versions
-This example code was last checked with
+This example code was last verified on Windows on October 1st, 2018
 | Tool          | Version |
 | ------------- | -------- |
+| Windows | 10 Version 1803 |
 | EMCC | 1.38.12 (commit 0d8576c0e8f5ee09a36120b9d44184b5da2f2e7a) |
 | Node | 8.9.1 |
 | mingw32-make | v5.0.0 |
 
+This example code was last verified on OSX on October 1st, 2018
+| Tool          | Version |
+| ------------- | -------- |
+| macOS | Version 10.13.6 |
+| EMCC | 1.38.12 (commit 0d8576c0e8f5ee09a36120b9d44184b5da2f2e7a) |
+| Node | 8.12.0 |
+| make | GNU Make 3.81 |
+
+
+# Recent updates
+October 2018
+ - Removed karma test example
+ - Added jest test example
+ - Renamed several folders for consistency
+ - Updated to the latest Emscripten
