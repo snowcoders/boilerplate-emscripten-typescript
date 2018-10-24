@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: trzeci/emscripten:sdk-incoming-64bit
+    steps:
+      - run:
+          name: Clone repo and build dependencies
+          command: |
+            git clone --recursive https://github.com/snowcoders/boilerplate-emscripten-typescript
+      - run:
+          name: Checkout branch
+          command: |
+            cd ./boilerplate-emscripten-typescript
+            git fetch --all
+            git checkout ${CIRCLE_BRANCH}
+            git submodule update --init --recursive
+      - run:
+          name: Build boilerplate-emscripten-typescript
+          command: |
+            cd ./boilerplate-emscripten-typescript
+            make -j2
+      - run:
+          name: Test boilerplate-emscripten-typescript
+          command: |
+            cd ./boilerplate-emscripten-typescript
+            make test
