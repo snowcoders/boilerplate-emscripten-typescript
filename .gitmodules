@@ -1,3 +1,6 @@
 [submodule "bandit"]
 	path = bandit
 	url = https://github.com/banditcpp/bandit/
+[submodule "shared-makefile"]
+	path = shared-makefile
+	url = https://github.com/k2snowman69/shared-makefile
