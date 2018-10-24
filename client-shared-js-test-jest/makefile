@@ -1,17 +1,12 @@
 # Useful methods or functions
-include ../makefile.sharedConstants
-include ../makefile.sharedFunctions
+include ../shared-makefile/cpp-constants.mk
+include ../shared-makefile/npm-constants.mk
+include ../shared-makefile/shared-cli.mk
 
-all: node_modules
+all: $(NPM_SUCCESS)
 
-node_modules: package.json
-	npm install
+include ../shared-makefile/npm-rules.mk
 
-test: coverage
-
-coverage: node_modules
+.PHONY: test
+test: $(NPM_SUCCESS)
 	npm run test
-
-.PHONY: clean
-clean:
-	$(call RemoveDir,coverage)

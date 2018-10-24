@@ -1,16 +1,8 @@
 # Useful methods or functions
-include ../makefile.sharedConstants
-include ../makefile.sharedFunctions
+include ../shared-makefile/cpp-constants.mk
+include ../shared-makefile/npm-constants.mk
+include ../shared-makefile/shared-cli.mk
 
-all: dist
+all: $(NPM_SUCCESS)
 
-dist: node_modules
-	npm run build
-
-node_modules: package.json
-	npm install
-
-.PHONY: clean
-clean:
-	$(call RemoveDir,dist)
-	
+include ../shared-makefile/npm-rules.mk

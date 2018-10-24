@@ -1,5 +1,5 @@
 # Useful methods or functions
-include makefile.sharedFunctions
+include shared-makefile/shared-cli.mk
 
 .PHONY: all
 all: client_shared_cpp_test client_shared_js_test_jest  client_shared_js_test_mocha client_web_raw client_web_webpack
@@ -48,3 +48,9 @@ clean:
 	cd $(call FixPath,./client-shared-cpp-test) $(CmdSeparator) $(Make) clean
 	cd $(call FixPath,./client-shared-cpp) $(CmdSeparator) $(Make) clean
 	
+.PHONY: clean-hard
+clean-hard: clean
+	cd $(call FixPath,./client-shared-js-test-jest) $(CmdSeparator) $(Make) clean-hard
+	cd $(call FixPath,./client-shared-js-test-mocha) $(CmdSeparator) $(Make) clean-hard
+	cd $(call FixPath,./client-web-raw) $(CmdSeparator) $(Make) clean-hard
+	cd $(call FixPath,./client-web-webpack) $(CmdSeparator) $(Make) clean-hard
