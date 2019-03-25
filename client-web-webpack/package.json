@@ -19,7 +19,7 @@
     "@types/react-dom": "16.8.3",
     "@types/webpack": "4.4.26",
     "concurrently": "3.6.1",
-    "css-loader": "0.28.11",
+    "css-loader": "2.1.1",
     "live-server": "1.2.1",
     "node-sass": "4.11.0",
     "sass-loader": "6.0.7",
