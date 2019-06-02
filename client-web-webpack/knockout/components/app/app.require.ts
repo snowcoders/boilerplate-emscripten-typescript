@@ -1,13 +1,13 @@
-import * as ko from 'knockout';
+import * as knockout from "knockout";
 
-import { AppViewModel } from './app.viewModel';
+import { AppViewModel } from "./app.viewModel";
 import html from "./app.html";
 
-import { Utils } from '../../ko-register-utils';
+import { Utils } from "../../ko-register-utils";
 
-let controlName = 'app';
+let controlName = "app";
 
 // register the knockout component
-Utils.registerKOComponent(ko, controlName, html, AppViewModel);
+Utils.registerKOComponent(knockout, controlName, html, AppViewModel);
 
 export { AppViewModel };

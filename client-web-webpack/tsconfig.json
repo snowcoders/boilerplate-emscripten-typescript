@@ -1,16 +1,13 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "esnext",
-        "moduleResolution": "node",
-        "jsx": "react"
-    },
-    "include": [
-        "./knockout/**/*",
-        "./react/**/*",
-        "*.ts"
-    ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react"
+  },
+  "include": ["./knockout/**/*", "./react/**/*", "*.ts"]
 }

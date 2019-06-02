@@ -1,4 +1,4 @@
-import * as ko from "knockout";
+import * as knockout from "knockout";
 
 import { AppViewModel } from "./components/app";
 
@@ -8,4 +8,4 @@ app.setAttribute("data-bind", "component:{ name: 'app'}");
 document.body.appendChild(app);
 
 var appViewModel = new AppViewModel({});
-ko.applyBindings(appViewModel, app);
+knockout.applyBindings(appViewModel, app);

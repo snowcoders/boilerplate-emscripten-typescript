@@ -5,5 +5,4 @@
 **/ship
 **/ship_obj
 **/node_modules
-**/*-lock.json
 **/*.lock
