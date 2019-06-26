@@ -1,11 +1,12 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "modules": "umd"
-            }
-        ]
-    ],
-    "moduleId": "ClientShared"
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "umd"
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-syntax-import-meta"],
+  "moduleId": "ClientShared"
 }
