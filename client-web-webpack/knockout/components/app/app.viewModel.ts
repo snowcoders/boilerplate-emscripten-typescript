@@ -1,4 +1,4 @@
-import * as ko from 'knockout';
+import * as knockout from 'knockout';
 
 import { ClientShared } from "client-shared-js";
 
@@ -12,7 +12,7 @@ export class AppViewModel {
     public currentString: KnockoutObservable<string>;
 
     constructor(params: AppViewModelProps) {
-        this.currentString = ko.observable("Mounting component...");
+        this.currentString = knockout.observable("Mounting component...");
 
         const app = this;
         import("client-shared-js").then(foo => {

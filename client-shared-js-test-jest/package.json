@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "client-shared-js": "file:../client-shared-js",
-    "requirejs": "^2.3.6"
+    "requirejs": "2.3.6"
   },
   "devDependencies": {
     "@types/jest": "24.0.13",

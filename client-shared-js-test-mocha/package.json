@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "client-shared-js": "file:../client-shared-js",
-    "requirejs": "^2.3.6"
+    "requirejs": "2.3.6"
   },
   "devDependencies": {
     "@types/chai": "4.1.7",
