@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "awesome-typescript-loader": "5.0.0",
+    "awesome-typescript-loader": "5.2.1",
     "client-shared-js": "file:../client-shared-js",
     "html-loader": "0.5.1",
     "knockout": "3.4.2",
