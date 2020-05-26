@@ -10,7 +10,7 @@
     "knockout": "3.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "source-map-loader": "0.2.4"
+    "source-map-loader": "1.0.0"
   },
   "devDependencies": {
     "@types/knockout": "3.4.67",
