@@ -22,7 +22,7 @@
     "css-loader": "3.6.0",
     "live-server": "1.2.1",
     "node-sass": "4.14.1",
-    "sass-loader": "9.0.0",
+    "sass-loader": "9.0.1",
     "style-loader": "1.2.1",
     "ts-node": "8.10.2",
     "typescript": "3.9.6",
