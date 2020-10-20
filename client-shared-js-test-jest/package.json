@@ -13,7 +13,7 @@
     "requirejs": "2.3.6"
   },
   "devDependencies": {
-    "@types/jest": "26.0.14",
+    "@types/jest": "26.0.15",
     "jest": "25.5.4",
     "ts-jest": "26.4.1",
     "ts-node": "9.0.0",
