@@ -17,7 +17,7 @@
     "@types/node": "14.14.20",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
-    "@types/webpack": "4.41.25",
+    "@types/webpack": "4.41.26",
     "concurrently": "5.3.0",
     "css-loader": "5.0.1",
     "live-server": "1.2.1",
