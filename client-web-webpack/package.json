@@ -6,7 +6,7 @@
   "dependencies": {
     "awesome-typescript-loader": "5.2.1",
     "client-shared-js": "file:../client-shared-js",
-    "html-loader": "2.1.1",
+    "html-loader": "2.1.2",
     "knockout": "3.5.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
