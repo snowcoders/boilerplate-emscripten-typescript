@@ -12,8 +12,8 @@
     "build-ship": "babel ./ship/client-shared-js.es6.js --out-file ./ship/client-shared-js.js --presets=minify"
   },
   "devDependencies": {
-    "@babel/cli": "7.13.10",
-    "@babel/core": "7.13.13",
+    "@babel/cli": "7.13.14",
+    "@babel/core": "7.13.14",
     "@babel/preset-env": "7.13.12",
     "babel-preset-minify": "0.5.1"
   }
