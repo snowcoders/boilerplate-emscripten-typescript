@@ -21,7 +21,7 @@
     "concurrently": "6.1.0",
     "css-loader": "5.2.4",
     "live-server": "1.2.1",
-    "node-sass": "4.14.1",
+    "node-sass": "5.0.0",
     "sass-loader": "11.0.1",
     "style-loader": "2.0.0",
     "ts-node": "9.1.1",
