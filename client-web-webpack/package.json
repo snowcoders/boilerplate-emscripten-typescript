@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/knockout": "3.4.70",
     "@types/node": "15.12.5",
-    "@types/react": "17.0.11",
+    "@types/react": "17.0.12",
     "@types/react-dom": "17.0.8",
     "@types/webpack": "5.28.0",
     "concurrently": "6.2.0",
