@@ -13,7 +13,7 @@
     "requirejs": "2.3.6"
   },
   "devDependencies": {
-    "@types/chai": "4.2.19",
+    "@types/chai": "4.2.20",
     "@types/mocha": "8.2.2",
     "chai": "4.3.4",
     "mocha": "7.2.0",
