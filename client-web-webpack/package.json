@@ -16,7 +16,7 @@
     "@types/knockout": "3.4.71",
     "@types/node": "16.0.1",
     "@types/react": "17.0.13",
-    "@types/react-dom": "17.0.8",
+    "@types/react-dom": "17.0.9",
     "@types/webpack": "5.28.0",
     "concurrently": "6.2.0",
     "css-loader": "5.2.6",
